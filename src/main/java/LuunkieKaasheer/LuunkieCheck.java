@@ -1,6 +1,7 @@
 package LuunkieKaasheer;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -17,6 +18,7 @@ import org.bukkit.event.block.Action;
 public class LuunkieCheck implements Listener {
 
     LuunkieBegroeting luunkieBegroeting = new LuunkieBegroeting();
+    LuunkieAanraak luunkieAanraak = new LuunkieAanraak();
 
     @EventHandler
 //    public void onPlayerItemHeld(PlayerItemHeldEvent event) {
@@ -37,24 +39,40 @@ public class LuunkieCheck implements Listener {
     }
 
 
-
     @EventHandler
-    public void onLuunkiejoin(PlayerJoinEvent event){
+    public void onLuunkiejoin(PlayerJoinEvent event) {
 
         luunkieBegroeting.begroet();
-        }
+    }
+
+    public void sendCenteredMessage(Player player, String message) {
+        int messageLength = message.length();
+        int screenWidth = 320; // Assuming a standard Minecraft screen width
+        int spaces = (screenWidth - messageLength) / 2;
+        String centeredMessage = String.format("%" + spaces + "s%s", "", message);
+        player.sendMessage(centeredMessage);
+    }
 
     @EventHandler
-    public void testenMaar(PlayerInteractEntityEvent event) {
+//    public void testenMaar(PlayerInteractEntityEvent event) {
+//        Player player = event.getPlayer();
+//        if (event.getRightClicked() instanceof Player) {
+//            Player clickedPlayer = (Player) event.getRightClicked();
+//            // Check if it's a right-click
+//            Bukkit.getServer().broadcastMessage("er is iemand geklikt");
+//                // Do something with the player who right-clicked and the player who was right-clicked
+//                player.sendMessage("You right-clicked " + clickedPlayer.getName());
+//                sendCenteredMessage(player, ChatColor.LIGHT_PURPLE + "Hello");
+//            }
+//        }
+    public void displayHello(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
-        if (event.getRightClicked() instanceof Player) {
-            Player clickedPlayer = (Player) event.getRightClicked();
-            // Check if it's a right-click
-            Bukkit.getServer().broadcastMessage("er is iemand geklikt");
-                // Do something with the player who right-clicked and the player who was right-clicked
-                player.sendMessage("You right-clicked " + clickedPlayer.getName());
-            }
+        if (player == Bukkit.getPlayer("Keremy")) {
+            luunkieAanraak.aanraak();
+
+
         }
     }
+}
 
 
