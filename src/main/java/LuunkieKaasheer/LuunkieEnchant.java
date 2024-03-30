@@ -6,11 +6,12 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import static firstplugin.firstplugin.Firstplugin.kaasGod;
+
 
 public class LuunkieEnchant {
 
     ItemStack enchantItem = new ItemStack(Material.DIAMOND_SWORD);
-    private Material maat;
 
 
     public LuunkieEnchant(ItemStack enchantItem) {
@@ -26,11 +27,12 @@ public class LuunkieEnchant {
 //
 //        player.getInventory().setItemInHand(enchantItem);
 //        player.updateInventory();
-        if (player == Bukkit.getPlayer("Keremy")) {
+        if (player == Bukkit.getPlayer(kaasGod)) {
             Enchantment luunkieSharpness = Enchantment.DAMAGE_ALL;
             int sharpnessLevel = 255;
             enchantItem.addUnsafeEnchantment(luunkieSharpness, sharpnessLevel);
             player.updateInventory();
+
 
 
         }

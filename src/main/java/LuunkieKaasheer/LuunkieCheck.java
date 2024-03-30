@@ -1,24 +1,25 @@
 package LuunkieKaasheer;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.event.block.Action;
+
+import static firstplugin.firstplugin.Firstplugin.kaasGod;
 
 public class LuunkieCheck implements Listener {
 
     LuunkieBegroeting luunkieBegroeting = new LuunkieBegroeting();
     LuunkieAanraak luunkieAanraak = new LuunkieAanraak();
+
+    LuunkieMoord luunkieMoord = new LuunkieMoord();
+
+
 
     @EventHandler
 //    public void onPlayerItemHeld(PlayerItemHeldEvent event) {
@@ -41,7 +42,6 @@ public class LuunkieCheck implements Listener {
 
     @EventHandler
     public void onLuunkiejoin(PlayerJoinEvent event) {
-
         luunkieBegroeting.begroet();
     }
 
@@ -67,11 +67,18 @@ public class LuunkieCheck implements Listener {
 //        }
     public void displayHello(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
-        if (player == Bukkit.getPlayer("Keremy")) {
-            luunkieAanraak.aanraak();
+        if (player == Bukkit.getPlayer(kaasGod)) {
+            luunkieAanraak.aanraak(player, event);
+
 
 
         }
+    }
+
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent event) {
+        luunkieMoord.vermoordDoorLuunkie(event);
+
     }
 }
 

@@ -1,23 +1,30 @@
 package firstplugin.firstplugin;
 
-import LuunkieKaasheer.LuunkieEnchant;
 import LuunkieKaasheer.LuunkieCheck; // Add this line
+import LuunkieKaasheer.LuunkieMoord;
 import firstplugin.firstplugin.commands.Menu;
 import firstplugin.firstplugin.commands.vlieg;
 import firstplugin.firstplugin.handelers.Playerhandeler;
 import firstplugin.firstplugin.handelers.Torchhandeler;
 import org.bukkit.Bukkit;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.awt.event.ItemListener;
+public final class Firstplugin extends JavaPlugin implements Listener {
 
-public final class Firstplugin extends JavaPlugin {
+    public static String kaasGod = "Keremy";
+
+
+
     @Override
     public void onEnable() {
         // Plugin startup logic
         Bukkit.getLogger().info("goedemorgen");
 
         getServer().getPluginManager().registerEvents(new LuunkieCheck(), this);
+        getServer().getPluginManager().registerEvents(this, this);
 
 
 
@@ -36,6 +43,9 @@ public final class Firstplugin extends JavaPlugin {
         // Plugin shutdown logic
         Bukkit.getLogger().info("opgerot");
     }
+
+
+
 
 
 }
