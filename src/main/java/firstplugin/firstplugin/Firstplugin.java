@@ -14,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Firstplugin extends JavaPlugin implements Listener {
 
-    public static String kaasGod = "Keremy";
+    public static String kaasGod = "Keremyy";
 
 
 
