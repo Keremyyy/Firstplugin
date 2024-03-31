@@ -10,10 +10,10 @@ public class LuunkieSpreek {
 // zeg ik, almachtige kaasheer luunkie
 
     public void luunkiePraat(AsyncPlayerChatEvent event, Player player) {
-        if (player == Bukkit.getPlayer(kaasGod)){
+
             String originalMessage = event.getMessage();
             String modifiedMessage = originalMessage + " zeg ik, almachtige kaasheer luunkie.";
             event.setMessage(modifiedMessage);
-        }
+
     }
 }
