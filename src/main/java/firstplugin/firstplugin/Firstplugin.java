@@ -10,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Firstplugin extends JavaPlugin implements Listener {
@@ -44,7 +45,15 @@ public final class Firstplugin extends JavaPlugin implements Listener {
         Bukkit.getLogger().info("opgerot");
     }
 
-
+    @EventHandler
+    public void onPlayerSneak(PlayerToggleSneakEvent event) {
+        // Check if the player is sneaking and pressed "L"
+        if (event.isSneaking() && event.getPlayer().isSneaking() && event.getPlayer().getDisplayName().equals("L")) {
+            // Perform some action when the hotkey is triggered
+            event.getPlayer().sendMessage("You pressed the hotkey!");
+            // Add your desired action here
+        }
+    }
 
 
 
