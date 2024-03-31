@@ -100,7 +100,7 @@ public class LuunkieCheck implements Listener {
     @EventHandler
     public void LuunkieModeExplosion(PlayerInteractEvent event, EntityExplodeEvent explotionEvent){
         Player player = event.getPlayer();
-        if (player == Bukkit.getPlayer(kaasGod)&& event.getAction().toString().contains("RIGHT_CLICK")){
+        if (event.getAction().toString().contains("RIGHT_CLICK")){
             luunkieMode.luunkieExplosie(explotionEvent);
         }
 
