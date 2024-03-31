@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -16,7 +17,7 @@ public class LuunkieCheck implements Listener {
 
     LuunkieBegroeting luunkieBegroeting = new LuunkieBegroeting();
     LuunkieAanraak luunkieAanraak = new LuunkieAanraak();
-
+    LuunkieSpreek luunkieSpreek = new LuunkieSpreek();
     LuunkieMoord luunkieMoord = new LuunkieMoord();
 
 
@@ -78,6 +79,13 @@ public class LuunkieCheck implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         luunkieMoord.vermoordDoorLuunkie(event);
+
+    }
+
+    @EventHandler
+    public void onLuunkieSpreek(AsyncPlayerChatEvent event){
+        Player player = event.getPlayer();
+        luunkieSpreek.luunkiePraat(event,player);
 
     }
 }

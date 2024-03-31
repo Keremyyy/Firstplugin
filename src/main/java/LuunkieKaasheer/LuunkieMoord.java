@@ -13,7 +13,7 @@ public class LuunkieMoord {
         // Check if the death was caused by a player
         if (event.getEntity().getKiller() != null && killerName.equals(kaasGod)){
 
-            deathMessage = event.getEntity().getName() + " heeft een poepje van onze god op het hooft gekregen";
+            deathMessage = event.getEntity().getName() + " heeft een poepje van onze almachtige kaasheer op het hooft gekregen";
         }
         event.setDeathMessage(deathMessage);
     }
