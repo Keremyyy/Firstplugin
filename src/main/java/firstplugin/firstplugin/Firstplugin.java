@@ -46,16 +46,7 @@ public final class Firstplugin extends JavaPlugin implements Listener {
         Bukkit.getLogger().info("opgerot");
     }
 
-    @EventHandler
-    public void onPlayerSneak(PlayerInteractEvent event) {
-        // Check if the player is sneaking and pressed "L"
-        if (event.getPlayer().isSneaking() && event.getAction().toString().contains("RIGHT_CLICK")
-        ) {
-            // Perform some action when the hotkey is triggered
-            event.getPlayer().sendMessage("You pressed the hotkey!");
-            // Add your desired action here
-        }
-    }
+
 
 
 }

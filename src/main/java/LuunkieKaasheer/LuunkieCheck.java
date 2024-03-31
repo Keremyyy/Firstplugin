@@ -5,10 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.bukkit.event.player.PlayerItemHeldEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 
 import static firstplugin.firstplugin.Firstplugin.kaasGod;
@@ -86,7 +83,14 @@ public class LuunkieCheck implements Listener {
     public void onLuunkieSpreek(AsyncPlayerChatEvent event){
         Player player = event.getPlayer();
         luunkieSpreek.luunkiePraat(event,player);
+    }
 
+    @EventHandler
+    public void luunkieModeToggle(PlayerInteractEvent event) {
+        // Check if the player is sneaking and pressed "L"
+        if (event.getPlayer().isSneaking() && event.getAction().toString().contains("RIGHT_CLICK")) {
+            // maak verbinding met luunkie mode
+        }
     }
 }
 
