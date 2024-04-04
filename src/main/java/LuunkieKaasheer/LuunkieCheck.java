@@ -1,6 +1,7 @@
 package LuunkieKaasheer;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,6 +9,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
 
 import static firstplugin.firstplugin.Firstplugin.kaasGod;
 
@@ -89,19 +91,23 @@ public class LuunkieCheck implements Listener {
 
     @EventHandler
     public void luunkieModeToggle(PlayerInteractEvent event) {
-        // Check if the player is sneaking and pressed "L"
         Player player = event.getPlayer();
         if (event.getPlayer().isSneaking() && event.getAction().toString().contains("RIGHT_CLICK") && player == Bukkit.getPlayer(kaasGod)) {
-
 
             luunkieMode.setLuunkieMode(event);
         }
     }
     @EventHandler
-    public void LuunkieModeExplosion(PlayerInteractEvent event, EntityExplodeEvent explotionEvent){
+    public void LuunkieModeExplosion(PlayerInteractEvent event){
         Player player = event.getPlayer();
-        if (event.getAction().toString().contains("RIGHT_CLICK")){
-            luunkieMode.luunkieExplosie(explotionEvent);
+
+
+        if (event.getAction().name().contains("LEFT_CLICK") && player == Bukkit.getPlayer(kaasGod)){
+
+
+            Location location = player.getEyeLocation();
+            Vector direction = location.getDirection();
+            luunkieMode.luunkieExplosie(location, direction);
         }
 
 
