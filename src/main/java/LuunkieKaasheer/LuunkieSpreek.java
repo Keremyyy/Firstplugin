@@ -14,6 +14,5 @@ public class LuunkieSpreek {
             String originalMessage = event.getMessage();
             String modifiedMessage = originalMessage + " zeg ik, almachtige kaasheer luunkie.";
             event.setMessage(modifiedMessage);
-
     }
 }
