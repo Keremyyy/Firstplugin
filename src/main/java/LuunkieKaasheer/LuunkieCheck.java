@@ -2,9 +2,11 @@ package LuunkieKaasheer;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
@@ -90,27 +92,41 @@ public class LuunkieCheck implements Listener {
     }
 
     @EventHandler
-    public void luunkieModeToggle(PlayerInteractEvent event) {
+    public void luunkieModeToggle(PlayerInteractEvent event) throws InterruptedException {
         Player player = event.getPlayer();
         if (event.getPlayer().isSneaking() && event.getAction().toString().contains("RIGHT_CLICK") && player == Bukkit.getPlayer(kaasGod)) {
 
             luunkieMode.setLuunkieMode(event);
         }
     }
+
     @EventHandler
-    public void LuunkieModeExplosion(PlayerInteractEvent event){
+    public void LuunkieModeExplosion(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
 
-        if (event.getAction().name().contains("LEFT_CLICK") && player == Bukkit.getPlayer(kaasGod)){
+        if (event.getAction().name().contains("LEFT_CLICK") && player == Bukkit.getPlayer(kaasGod)) {
 
 
             Location location = player.getEyeLocation();
             Vector direction = location.getDirection();
-            luunkieMode.luunkieExplosie(location, direction);
+            luunkieMode.luunkieExplosie(location, direction, player);
         }
 
 
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageByEntityEvent event) {
+        if (event.getDamager() instanceof Fireball && event.getEntity() instanceof Player) {
+            Fireball fireball = (Fireball) event.getDamager();
+            Player shooter = (Player) fireball.getShooter();
+            Player damagedPlayer = (Player) event.getEntity();
+
+            if (shooter != null && damagedPlayer != null && shooter.equals(damagedPlayer)) {
+                event.setCancelled(true);
+            }
+        }
     }
 }
 
