@@ -24,7 +24,7 @@ public class Pokeflute implements Listener {
 
     private static void maakFluit(){
         ItemStack pokeflute = new ItemStack(Material.PAPER, 1);
-        ItemMeta meta = item.getItemMeta();
+        ItemMeta meta = pokeflute.getItemMeta();
         meta.setDisplayName("Pokeflute");
         List<String> lore = new ArrayList<>();
         lore.add("Use this to wake up sleeping pokemon");
