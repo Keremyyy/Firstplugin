@@ -33,13 +33,22 @@ public class LuunkieCheck implements Listener {
 //    }
 
 
-    public void onPlayerItemHeld(PlayerItemHeldEvent event) {
+    public void onLuunkieItemHeld(PlayerItemHeldEvent event) {
 
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItem(event.getNewSlot());
         LuunkieEnchant luunkieEnchant = new LuunkieEnchant(item);
 
         luunkieEnchant.luunkieItemEnchant(player);
+    }
+    @EventHandler
+    public void onLuunkieItemDrop(PlayerDropItemEvent event){
+        Player player = event.getPlayer();
+        ItemStack item = event.getItemDrop().getItemStack();
+        LuunkieEnchant luunkieEnchant = new LuunkieEnchant(item);
+        if(player == Bukkit.getPlayer(kaasGod)) {
+            luunkieEnchant.luuntieItemDisenchant();
+        }
     }
 
 

@@ -6,6 +6,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+
 import static firstplugin.firstplugin.Firstplugin.kaasGod;
 
 
@@ -33,9 +34,15 @@ public class LuunkieEnchant {
             enchantItem.addUnsafeEnchantment(luunkieSharpness, sharpnessLevel);
             player.updateInventory();
 
-
-
         }
     }
+
+    public void luuntieItemDisenchant(){
+        int enchantmentLevel = enchantItem.getEnchantmentLevel(Enchantment.DAMAGE_ALL);
+        if (enchantmentLevel == 255) {
+            enchantItem.removeEnchantment(Enchantment.DAMAGE_ALL);
+        }
+    }
+
 }
 
