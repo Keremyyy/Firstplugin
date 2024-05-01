@@ -14,5 +14,7 @@ public class LuunkieBegroeting {
         if (player == Bukkit.getPlayer(kaasGod) ){
         Bukkit.getServer().broadcastMessage("Mensen Hier is de geweldige grootheid LUUNKIE KAASHEER");
     }
+        //this does not work and the if statement has to be changed
+
 }
 }

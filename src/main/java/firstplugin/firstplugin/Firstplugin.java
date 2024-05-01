@@ -14,7 +14,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import firstplugin.firstplugin.Itemmanager;
 
 
 public final class Firstplugin extends JavaPlugin implements Listener {
@@ -25,7 +24,6 @@ public final class Firstplugin extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         Bukkit.getLogger().info("goedemorgen");
-
         // Initialize your items
         Itemmanager.init();
 
