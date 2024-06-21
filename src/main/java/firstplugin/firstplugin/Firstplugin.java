@@ -1,6 +1,6 @@
 package firstplugin.firstplugin;
 
-import LuunkieKaasheer.LuunkieCheck; // Add this line
+import LuunkieKaasheer.LuunkieCheck;
 import LuunkieKaasheer.LuunkieMoord;
 import firstplugin.firstplugin.Item.Pokeflute;
 import firstplugin.firstplugin.commands.Menu;
@@ -14,7 +14,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import firstplugin.firstplugin.Itemmanager;
+//import firstplugin.firstplugin.Item.Itemmanager;
 
 
 public final class Firstplugin extends JavaPlugin implements Listener {
@@ -27,7 +27,7 @@ public final class Firstplugin extends JavaPlugin implements Listener {
         Bukkit.getLogger().info("goedemorgen");
 
         // Initialize your items
-        Itemmanager.init();
+//        Itemmanager.init();
 
         // Register event listeners
         getServer().getPluginManager().registerEvents(new LuunkieCheck(), this);
@@ -51,16 +51,13 @@ public final class Firstplugin extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        // Your code for handling player death event
     }
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
-        // Your code for handling player interact event
     }
 
     @EventHandler
     public void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
-        // Your code for handling player toggle sneak event
     }
 }
