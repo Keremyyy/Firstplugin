@@ -1,6 +1,6 @@
 package firstplugin.firstplugin;
 
-import LuunkieKaasheer.LuunkieCheck; // Add this line
+import LuunkieKaasheer.LuunkieCheck;
 import LuunkieKaasheer.LuunkieMoord;
 import firstplugin.firstplugin.Item.Pokeflute;
 import firstplugin.firstplugin.commands.Menu;
@@ -14,7 +14,8 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
+//import firstplugin.firstplugin.Item.Itemmanager;
+// Item manager heeft fix nodig
 
 public final class Firstplugin extends JavaPlugin implements Listener {
 
@@ -22,10 +23,10 @@ public final class Firstplugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         Bukkit.getLogger().info("goedemorgen");
-        // Initialize your items
-        Itemmanager.init();
+//        Itemmanager.init();
+        // Item manager heeft fix nodig
+
 
         // Register event listeners
         getServer().getPluginManager().registerEvents(new LuunkieCheck(), this);
