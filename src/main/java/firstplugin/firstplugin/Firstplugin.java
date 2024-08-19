@@ -19,6 +19,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Firstplugin extends JavaPlugin implements Listener {
 
+// de baan van de player waar deze plugin
+// voor werkt
     public static String kaasGod = "Luuk7777";
 
     @Override
