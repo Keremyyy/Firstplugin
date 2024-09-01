@@ -54,7 +54,7 @@ public class LuunkieCheck implements Listener {
 
     @EventHandler
     public void onLuunkiejoin(PlayerJoinEvent event) {
-        luunkieBegroeting.begroet();
+        luunkieBegroeting.begroet(event);
     }
 
     public void sendCenteredMessage(Player player, String message) {
