@@ -21,7 +21,8 @@ public final class Firstplugin extends JavaPlugin implements Listener {
 
 // de baan van de player waar deze plugin
 // voor werkt
-    public static String kaasGod = "Luuk7777";
+//    Luuk7777 is de naam van luuk
+    public static String kaasGod = "Keremyy";
 
     @Override
     public void onEnable() {

@@ -18,7 +18,7 @@ public class vlieg implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        // Call the geefDia() method on the LuunkieDia instance
+//         Call the geefDia() method on the LuunkieDia instance
 //        dialuuk.geefDia();
 
 
