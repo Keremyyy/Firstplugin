@@ -139,8 +139,8 @@ public class LuunkieCheck implements Listener {
         }
     }
 
-
-    public void OnLuunkieRen(Player player) {
+@EventHandler
+    public void OnLuunkieRen(PlayerToggleSprintEvent) {
         if (player.getPlayer().getName() == kaasGod) {
             LuunkieRen luunkieRen = new LuunkieRen(player);
 

@@ -13,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.event.player.PlayerToggleSprintEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 //import firstplugin.firstplugin.Item.Itemmanager;
 // Item manager heeft fix nodig
@@ -64,5 +65,10 @@ public final class Firstplugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
         // Your code for handling player toggle sneak event
+    }
+
+    @EventHandler
+    public void onPlayerrun(PlayerToggleSprintEvent){
+
     }
 }
