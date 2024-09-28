@@ -15,6 +15,7 @@ Player luunkie;
 
     public void run (){
         float rensnelhied = 0.5f;
+
         luunkie.setWalkSpeed(rensnelhied);
 
         }
