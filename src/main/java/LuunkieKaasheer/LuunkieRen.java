@@ -13,11 +13,11 @@ Player luunkie;
     }
 
 
-    private void run (Player luunkie){
-        if(luunkie.isSprinting()){
-            luunkie.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 1, 10));
+    public void run (){
+        float rensnelhied = 0.5f;
+        luunkie.setWalkSpeed(rensnelhied);
+
         }
 
     }
 
-}

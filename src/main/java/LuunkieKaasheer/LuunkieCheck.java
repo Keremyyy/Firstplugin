@@ -55,7 +55,12 @@ public class LuunkieCheck implements Listener {
 
     @EventHandler
     public void onLuunkiejoin(PlayerJoinEvent event) {
-        luunkieBegroeting.begroet(event);
+        Player player = event.getPlayer();
+        if(player.getName() == kaasGod) {
+            luunkieBegroeting.begroet(event);
+            LuunkieRen luunkieRen = new LuunkieRen(player);
+            luunkieRen.run();
+        }
     }
 
     public void sendCenteredMessage(Player player, String message) {
@@ -64,6 +69,8 @@ public class LuunkieCheck implements Listener {
         int spaces = (screenWidth - messageLength) / 2;
         String centeredMessage = String.format("%" + spaces + "s%s", "", message);
         player.sendMessage(centeredMessage);
+
+
     }
 
     @EventHandler
@@ -140,9 +147,10 @@ public class LuunkieCheck implements Listener {
     }
 
 @EventHandler
-    public void OnLuunkieRen(PlayerToggleSprintEvent) {
-        if (player.getPlayer().getName() == kaasGod) {
-            LuunkieRen luunkieRen = new LuunkieRen(player);
+    public void OnLuunkieRen(PlayerToggleSprintEvent event) {
+        Player player;
+        if (event.getPlayer().getName() == kaasGod) {
+            player = event.getPlayer();
 
 
         }

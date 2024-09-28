@@ -66,9 +66,4 @@ public final class Firstplugin extends JavaPlugin implements Listener {
     public void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
         // Your code for handling player toggle sneak event
     }
-
-    @EventHandler
-    public void onPlayerrun(PlayerToggleSprintEvent){
-
-    }
 }
